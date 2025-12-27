@@ -42,11 +42,11 @@ Next I'll be inserting this sample data:
 and a few loan records.
 */
 
-INSERT INTO authors (name, birth_year) VALUES ('', '');
-INSERT INTO authors (name, birth_year) VALUES ('', '');
-INSERT INTO authors (name, birth_year) VALUES ('', '');
-INSERT INTO authors (name, birth_year) VALUES ('', '');
-INSERT INTO authors (name, birth_year) VALUES ('', '');
+INSERT INTO authors (name, birth_year) VALUES ('William Shakespeare', '1564-04-23');
+INSERT INTO authors (name, birth_year) VALUES ('Agatha Christie', '1890-09-15');
+INSERT INTO authors (name, birth_year) VALUES ('Barbara Cartland');
+INSERT INTO authors (name, birth_year) VALUES ('Danielle Steel');
+INSERT INTO authors (name, birth_year) VALUES ('Harold Robbins', '1916-05-16');
 
 INSERT INTO books (title, published_year, author_id) VALUES ('', '', '');
 INSERT INTO books (title, published_year, author_id) VALUES ('', '', '');
