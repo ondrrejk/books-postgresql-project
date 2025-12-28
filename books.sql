@@ -1,3 +1,14 @@
+/*
+First, I'll create a database called bookshelf:
+- Note that I am using PostgreSQL.
+- We are assuming, that the user is already logged in.
+*/
+
+CREATE DATABASE bookshelf;
+
+-- next we connect to that database.
+\c bookshelf;
+
 /* I'll be making the tables:
 1. authors
 2. books
@@ -15,7 +26,7 @@ CREATE TABLE authors (
 CREATE TABLE books (
     book_id SERIAL NOT NULL PRIMARY KEY,
     title VARCHAR(200) NOT NULL,
-    published_year YEAR,
+    published_year INT,
     author_id INT REFERENCES authors(author_id)
 );
 
@@ -36,10 +47,10 @@ CREATE TABLE loans (
 
 /*
 Next I'll be inserting this sample data:
-5 authors
-10 books
-5 members
-and a few loan records.
+- 5 authors
+- 10 books
+- 5 members
+- a few loan records.
 */
 
 INSERT INTO authors (name, birth_year) VALUES ('William Shakespeare', '1564-04-23');
@@ -68,3 +79,13 @@ INSERT INTO members (name, email, joined_date) VALUES ('', '', '');
 INSERT INTO loans (book_id, member_id, loan_date, return_date) VALUES ('', '', '', '');
 INSERT INTO loans (book_id, member_id, loan_date, return_date) VALUES ('', '', '', '');
 INSERT INTO loans (book_id, member_id, loan_date, return_date) VALUES ('', '', '', '');
+
+-- list all books
+SELECT * FROM books;
+-- list all members
+SELECT * FROM members;
+-- find all books by a specific author
+SELECT books.book_id, books.title, books.published_year, authors.author_id AS author
+FROM books
+JOIN authors ON books.author_id=authors.author_id
+WHERE authors.name='';
