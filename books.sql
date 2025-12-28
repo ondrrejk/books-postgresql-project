@@ -53,11 +53,11 @@ Next I'll be inserting this sample data:
 - a few loan records.
 */
 
-INSERT INTO authors (name, birth_year) VALUES ('William Shakespeare', '1564-04-23');
-INSERT INTO authors (name, birth_year) VALUES ('Agatha Christie', '1890-09-15');
+INSERT INTO authors (name, birth_year) VALUES ('William Shakespeare', 1564);
+INSERT INTO authors (name, birth_year) VALUES ('Agatha Christie', 1890);
 INSERT INTO authors (name, birth_year) VALUES ('Barbara Cartland');
 INSERT INTO authors (name, birth_year) VALUES ('Danielle Steel');
-INSERT INTO authors (name, birth_year) VALUES ('Harold Robbins', '1916-05-16');
+INSERT INTO authors (name, birth_year) VALUES ('Harold Robbins', 1916);
 
 INSERT INTO books (title, published_year, author_id) VALUES ('A Hazard of Hearts', 3);
 INSERT INTO books (title, published_year, author_id) VALUES ('The Promise', 1978, 4);
